@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Знайомство з Цибеньом Романом</title>
+    <script>
+    	var photoCount = 4;
+    	//змінна кількість фотуів , які треба перегорнути
+    	var currentPhotoIndex = 1;
+    	//змінна яка містить індекч поточного номера фото 
+    	function showNextPhoto(){
+    	//створюємо функцію для гортання фото
+        currentPhotoIndex++;
+        //додаємо 1 до поточного зміної із номером фото
+        if (currentPhotoIndex > photoCount) currentPhotoIndex = 1;
+        //умова , що дозволяє по колу перемикати фото від 1 до 5 влючно, а потім знаву від 1 до 5 включно
+        var elementPhoto = document.getElementById("currentPhoto");
+        //помістити у змінні витягнути елемент
+        elementPhoto.src ="images/photo" + currentPhotoIndex + ".jpg";//заміни номер у назві фото на поточний
+    	}
+
+
+    	function adnextPhoto(){
+    	var newImage = document.createElement("img");
+    	//створюємо функцію для гортання фото
+        currentPhotoIndex++;
+
+        
+        if (currentPhotoIndex > photoCount) currentPhotoIndex = 1;
+        newImage.src = "images/photo" + currentPhotoIndex + ".jpg";//заміни номер у назві фото на поточний
+    	
+        //умова , що дозволяє по колу перемикати фото від 1 до 5 влючно, а потім знаву від 1 до 5 включно
+        var containerElement = document.getElementById("1");
+        //помістити у змінні витягнути елемент
+        containerElement.appendChild(newImage);
+        }
+    </script>
+</head>
+<body>
+	<div id="1">
+		<img id="currentPhoto" src="images/photo1.jpg" />
+	</div>
+	<button onclick="showNextPhoto()">next photo</button>
+	<button onclick="adnextPhoto()">21</button>
+</body>
+</html>
